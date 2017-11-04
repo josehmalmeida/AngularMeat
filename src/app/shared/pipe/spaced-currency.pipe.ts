@@ -4,7 +4,7 @@ import { CurrencyPipe } from '@angular/common'
 @Pipe({ name: 'spacedCurrency' })
 export class SpacedCurrencyPipe extends CurrencyPipe implements PipeTransform {
 
-  transform(value: any, currencyCode: string, symbolDisplay: boolean, digits?: string): string | null {
+  transform(value: any, currencyCode?: string, symbolDisplay?: 'code' | 'symbol' | 'symbol-narrow', digits?: string): string | null {
     let tempReturn = super.transform(value, currencyCode, symbolDisplay, digits)
     if (tempReturn === null) {
       return null
